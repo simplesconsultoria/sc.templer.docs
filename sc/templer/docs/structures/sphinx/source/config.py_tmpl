@@ -148,7 +148,7 @@ htmlhelp_basename = '$title'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', '$docname.tex', u'$title',
+  ('index', '$title.tex', u'$title',
    u'$author', 'manual'),
 ]
 
@@ -181,7 +181,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '$docname', u'$title',
+    ('index', '$title', u'$title',
      [u'$author'], 1)
 ]
 
