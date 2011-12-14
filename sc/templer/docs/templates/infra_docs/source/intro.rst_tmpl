@@ -1,0 +1,88 @@
+************************
+$title
+************************
+
+Apresentação
+========================
+
+.. todo:: Apresentação da solução
+
+Diagrama da solução
+------------------------
+
+.. todo:: Detalhamento da solução e diagrama
+
+::
+             
+         ------------            
+         | Internet |
+         ------------
+             ||
+             vv
+      Nginx  (80/443)   (Servidor web)
+             |
+             v
+     CherryPy (5000)   (Servidor de tema)
+             |
+             v
+       Varnish (8080)   (Acelerador web)
+           /   \
+          v     v
+     Zope 1  &  2 (8081/8082)    (Servidor de aplicação)
+            \ /
+             v
+           Zeo (8100)    (Servidor de base de dados)
+
+
+Diagrama físico
+------------------------
+
+.. todo:: Servidores utilizados
+
+Conforme esquema:
+ 
+.. todo:: Esquema
+ 
+::
+
+   +---------------+
+   |               |                       
+   |     Nginx     |  Servidor de Frontemd
+   |               |  
+   |               |  host.fqdn.bar
+   |    CherryPy   |  MSXDos
+   |               |  127.0.0.1
+   |               |  
+   |    Varnish    |  
+   +---------------+
+                                            
+   +---------------+   Servidor de Backend
+   |  Zope 1 & 2   |   
+   |               |   host.fqdn.bar
+   |               |   MSXDos
+   |      Zeo      |   127.0.0.1
+   +---------------+                                  
+
+
+  
+Diagrama de integrações
+------------------------
+
+.. todo:: Detalhamento de conexões com serviços externos
+
+::
+             
+                          Nginx ---------------+
+                            |                  |
+      JBoss                 v                  |
+        ^               CherryPy               v
+        |                   |                 LDAP (Autenticação)
+        |                   v                  ^
+        +--------------- Varnish               |
+                          /   \                |
+    Oracle <--+          v     v               |
+              |------- Zope 1  &  2 -----------+
+    (Legado)  |            \ /
+              |             v
+   Ingres  <--|            Zeo 
+
