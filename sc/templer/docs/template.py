@@ -34,13 +34,11 @@ class ProjectDocumentation(BaseTemplate):
         StringVar(
             'title',
             title='Project Title',
-            description="""Inform the Project title. It could be something
-                           like: Vogon Poetry Co. Intranet
-                        """,
+            description="""A meaningful title for this project.""",
             default='Customer Project',
             modes=(EASY, EXPERT),
             page='Metadata',
-            help="""Title for this project."""),
+            help="""It could be something like: Vogon Poetry Co. Intranet"""),
 
         StringVar(
             'description',
